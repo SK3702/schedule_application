@@ -1,0 +1,47 @@
+<div class="container">
+
+    <h2>予定の編集</h2>
+
+    <% if flash.now[:notice_edit_fail] %>
+        <p class="notice_fail"><%= flash[:notice_edit_fail] %></p>
+    <% end %>
+
+    <%= render "shared/error", obj: @post %>
+
+    <%= form_with model: @post do |f| %>
+        <div class="form_wrapper">
+            <div class="title_area">
+                <%= f.label :title ,"タイトル", class:"label" %>
+                <%= f.text_field :title, class:"form" %>
+            </div>
+            <div class="date_area">
+                <div class="start_date_area">
+                    <%= f.label :start_date ,"開始日", class:"label" %></th>
+                    <%= f.date_field :start_date, class:"form" %>
+                </div>
+                <div class="end_date_area">
+                    <%= f.label :end_date ,"終了日", class:"label" %></th>
+                    <%= f.date_field :end_date, class:"form" %>
+                </div>
+            </div>
+            <div class="all_day_area">
+                <%= f.check_box :all_day %>
+                <%= f.label :all_day ,"終日の場合はチェックを入れます。"%>
+            </div>
+            <div class="memo_area">
+                <%= f.label :memo ,"スケジュールメモ", class:"label" %>
+                <%= f.text_area :memo, class:"form" %>
+            </div>
+
+            <div>
+                <ul class="new_btn_area">
+                    <li><%= f.submit "保存する", class:"new_submit_btn btn" %></li>
+                    <li><%= link_to "キャンセル", :posts %></li>
+                </ul>
+            </div>
+
+        </div>
+        
+    <%end%>
+
+</div>

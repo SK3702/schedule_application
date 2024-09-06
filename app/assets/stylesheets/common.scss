@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+header{
+    width: 100%;
+    font-size: 13px;
+    background-color: skyblue;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.container{
+    margin: 20px 200px 0 200px;
+}
+
+.main_header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn{
+    padding: 5px 8px;
+    border: 2px solid blue;
+    border-radius: 0;
+    color: white;
+    background-color: blue;
+    display: flex;
+}
+
+.btn:hover{
+    background-color: #fff;
+    color: blue;
+}
+
+.table .thead .tr{
+    display: flex;
+    justify-content: space-between;
+}
+
+.show_container{
+    margin: 20px 450px 0 450px;
+}
+
+.show_header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.details_area{
+    background-color: rgb(232, 232, 232);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.details_area table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.details_area th, .details_area td{
+    border: solid 1px black;
+    padding: 10px;
+}
+
+.details_area th{
+    width: 30%;
+}
+
+.main_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(232, 232, 232);
+}
+
+.main_table th {
+    padding: 10px 20px;
+    font-size: 12px;
+    background-color: rgb(232, 232, 232);
+    border-bottom: solid 1px black;
+    text-align: left;
+    
+}
+  
+.main_table td {
+    padding: 10px 20px;
+    font-size: 12px;
+    background-color: rgb(232, 232, 232);
+    border-bottom: solid 1px black;
+}
+
+h1{
+    font-size: 20px;
+}
+
+h2{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.form_wrapper{
+    width: 100%;
+    background-color: rgb(232, 232, 232);
+    padding: 20px 80px 0 80px;
+}
+
+.label{
+    display: block;
+    width: 100%;
+}
+
+.form{
+    display: block;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.title_area .label::after{
+    content:'*';
+    color: red;
+    font-size: 14px;
+    margin-left: 4px;
+}
+
+.start_date_area .label::after{
+    content:'*';
+    color: red;
+    font-size: 14px;
+    margin-left: 4px;
+}
+
+.end_date_area .label::after{
+    content:'*';
+    color: red;
+    font-size: 14px;
+    margin-left: 4px;
+}
+
+.date_area{
+    display: flex;
+}
+
+.start_date_area{
+    width: 50%;
+}
+
+.end_date_area{
+    width: 50%;
+}
+
+.all_day_area{
+    margin-bottom: 20px;
+}
+
+.memo_area .form{
+    height: 200px;
+    padding: 7px;
+}
+
+.new_btn_area{
+    display: flex;
+}
+
+.new_submit_btn{
+    margin: 0 20px 20px 0;
+}
+
+.notice_success{
+    color: blue;
+}
+
+.notice_fail{
+    color: red;
+}
