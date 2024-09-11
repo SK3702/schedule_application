@@ -5,14 +5,9 @@
             <%= button_to '新規投稿', {controller: 'posts', action: 'new'}, {method: :get, class: "new_btn btn"} %>
         </div>
 
-        <% if flash[:notice_new_success] %>
-            <p class="notice_success"><%= flash[:notice_new_success] %></p>
+        <% if flash[:success] %>
+            <p class="flash_success"><%= flash[:success] %></p>
         <% end %>
-
-        <% if flash[:notice_edit_success] %>
-            <p class="notice_success"><%= flash[:notice_edit_success] %></p>
-        <% end %>
-
 
         <table class="main_table">
             <thead>
