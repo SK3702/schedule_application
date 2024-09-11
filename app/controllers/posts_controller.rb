@@ -8,13 +8,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:title, :start_date, :end_date, :memo))
+    @post = Post.new(post_params)
     if @post.save
-      flash[:notice_new_success] = "予定を新規追加しました"
+      flash[:success] = "予定を新規追加しました"
       redirect_to :posts
     else
-      flash.now[:notice_new_fail] = "予定を追加できませんでした"
-      render "new"
+      flash.now[:error] = "予定を追加できませんでした"
+      render :new
     end
   end
 
@@ -28,12 +28,12 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(params.require(:post).permit(:title, :start_date, :end_date, :all_day, :memo))
-      flash[:notice_edit_success] = "予定を編集しました"
+    if @post.update(post_params)
+      flash[:success] = "予定を編集しました"
       redirect_to :posts
     else
-      flash.now[:notice_edit_fail] = "予定を編集できませんでした"
-      render "edit"
+      flash.now[:error] = "予定を編集できませんでした"
+      render :edit
     end
   end
 
@@ -44,5 +44,9 @@ class PostsController < ApplicationController
     redirect_to :posts
   end
 
+  private
+    def post_params
+      params.require(:post).permit(:title, :start_date, :end_date, :all_day, :memo)
+    end
 
 end
